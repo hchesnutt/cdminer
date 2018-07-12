@@ -2,13 +2,20 @@
 
 const chalk = require('chalk');
 
-const companies = require('./data.json');
+const { parseArgs, loadData } = require('./lib');
+const { filterCompanies } = require('./queries');
 
-const companyNames = companies.map(({ company_name }) => company_name);
+const args = parseArgs(process.argv);
+const { filePath, query, param } = args;
+
+const companies = loadData(filePath);
+
+const companyNames = filterCompanies(companies, query, param);
 
 console.log(`
-  ${chalk.green('Company Names:')}
+  Company Names:
   ${companyNames.toString()}
-  ${chalk.green('Number of Companies:')}
-  ${companyNames.length}
+  Number of Companies: ${companyNames.length}
 `);
+
+process.exit();
