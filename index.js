@@ -17,9 +17,9 @@ const companyNames = filterCompanies(companies, query, param);
 
 // Print results to stdout
 console.log(`
-  Company Names:
-  ${companyNames.toString()}
-  Number of Companies: ${companyNames.length}
+${chalk.yellow('Company Names:')}
+  ${companyNames.join(', ')}
+${chalk.yellow('Number of Companies:')} ${companyNames.length}
 `);
 
 process.exit();

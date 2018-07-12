@@ -18,11 +18,6 @@ const handlers = {
   },
 };
 
-const mappings = {
-};
-
-
 module.exports = {
   handlers,
-  mappings,
 };
