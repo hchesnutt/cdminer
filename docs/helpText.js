@@ -86,6 +86,4 @@ ${chalk.yellow('ARGUMENTS')}
     See <query> for param options.`
 };
 
-module.exports = {
-  helpText,
-};
+module.exports = helpText;
