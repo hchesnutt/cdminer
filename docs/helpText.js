@@ -22,7 +22,7 @@ ${chalk.yellow('ARGUMENTS')}
         Finds the list of companies by Location (state only). 
         
         Example:
-          > cdminer locate CA
+          $ cdminer locate CA
         
       ${chalk.white.italic('find_before')}
         Finds the list of companies before a specific year. This is an inclusive 
@@ -32,7 +32,7 @@ ${chalk.yellow('ARGUMENTS')}
         Must be an integer.
         
         Example: 
-          > cdminer find_before 1999
+          $ cdminer find_before 1999
         
       ${chalk.white.italic('find_after')}
         Finds the list of companies after a specific year. This is an inclusive 
@@ -42,7 +42,7 @@ ${chalk.yellow('ARGUMENTS')}
         Must be an integer.
         
         Example: 
-          > cdminer find_after 2000
+          $ cdminer find_after 2000
         
       ${chalk.white.italic('find_companies_between_size')}
         Finds the list of companies based on the number of full time employees. 
@@ -53,7 +53,7 @@ ${chalk.yellow('ARGUMENTS')}
         '1,001-5,000', '5,001-10,000', '10,001+'].
         
         Example:
-          > cdminer find_companies_between_size 1,001-5,000
+          $ cdminer find_companies_between_size 1,001-5,000
       
       ${chalk.white.italic('find_type')}
         Finds all companies by Company Category. 
@@ -80,10 +80,10 @@ ${chalk.yellow('ARGUMENTS')}
             'Transportation']
 
         Example:
-          > cdminer   find_type Data/Technology'
+          $ cdminer find_type Data/Technology'
 
-  <param>
-    See <query> for param options.`
+  ${chalk.cyan('<param>')}
+    See ${chalk.cyan('<query>')} for param options.`
 };
 
 module.exports = helpText;
