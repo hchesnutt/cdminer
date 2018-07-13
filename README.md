@@ -2,24 +2,6 @@
 
 Company Data Miner is a quick and light command-line data explorer for company data JSON files that can be loaded into memory.
 
-<<<<<<< HEAD
-=======
-## Assumptions
-cdminer was developed with the following assumptions:
-- JSON file can fit in memory
-- JSON file is an array of company objects
-- Each object looks like the company schema example below, but may contain more properties.
-```json
-{
-  "company_name": "3 Round Stones, Inc.",
-  "year_founded": 2010,
-  "state": "DC",
-  "full_time_employees": "1-10",
-  "company_category": "Data/Technology"
-}
-```
-
->>>>>>> 0e0699fe1dc01bc5f0daac1baabeae3999bf48e9
 ## Installing
 
 ### Prerequisites
