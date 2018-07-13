@@ -98,27 +98,7 @@ $ cdminer ./data.json find_companies_between_size 1,001-5,000
 #### **find_type**
   - Finds all companies by company category.
 
-`<param>` options:
-must be exact match.
-Possible values [’N/A’,
-'Aerospace and Defense',
-'Business & Legal Services',
-'Data/Technology',
-'Education',
-'Energy',
-'Environment & Weather',
-'Finance & Investment',
-'Food & Agriculture',
-'Geospatial/Mapping',
-'Governance',
-'Healthcare',
-'Housing/Real Estate',
-'Insurance',
-'Lifestyle & Consumer',
-'Media',
-'Research & Consulting',
-'Scientific Research',
-'Transportation']
+`<param>` must be exact match. Possible values: `[’N/A’, 'Aerospace and Defense', 'Business & Legal Services', 'Data/Technology', 'Education', 'Energy', 'Environment & Weather', 'Finance & Investment', 'Food & Agriculture', 'Geospatial/Mapping', 'Governance', 'Healthcare', 'Housing/Real Estate', 'Insurance', 'Lifestyle & Consumer', 'Media', 'Research & Consulting', 'Scientific Research', 'Transportation']`
 ```shell
 $ cdminer ./data.json find_type Data/Technology'
 ```
