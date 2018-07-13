@@ -41,10 +41,11 @@ $ cdminer ./data.json locate 'CA'
 cdminer <path> <query> <param>
 ```
 ### `<path>`
-Relative path to json file.
+Relative path to json file. Also accepts `--help` to print docs to console.
 
 ### `<query>`
 cdminer will suggest most similar query in case of misspell based on Levenshtein distance. Query can be one of the following:
+
 #### **locate**
   - Finds the list of companies by state location. 
 `<param>` must be a state acronym and is case sensitive.
