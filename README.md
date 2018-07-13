@@ -1,43 +1,54 @@
 # cdminer
 
-Company Data Miner is a pretty quick and light command-line data explorer for json files that can be loaded into memory.
+Company Data Miner is a quick and light command-line data explorer for company data JSON files that can be loaded into memory.
 
 ## Assumptions
 cdminer was developed with the following assumptions:
-- JSON file provided by user can fit in memory
-- JSON file is an array of objects
-- Each object looks like the company schema example
+- JSON file can fit in memory
+- JSON file is an array of company objects
+- Each object looks like the company schema example below
+```json
+{
+  "company_name": "3 Round Stones, Inc.",
+  "year_founded": 2010,
+  "state": "DC",
+  "full_time_employees": "1-10",
+  "company_category": "Data/Technology"
+}
+```
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+## Installing
 
 ### Prerequisites
 
 - cdminer is currently only supported on UNIX based systems.
+- Node.js^10.0.0
+- npm^5.6.0
 
+### Instructions
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
+A step by step series of examples that tell you how to get this tool up and running on your local machine.
 
 Clone or download repository onto your local computer
-
 ```shell
 git clone https://github.com/hchesnutt/cdminer
 ```
+
 Navigate to root
 ```shell
 $ cd ./cdminer
 ```
+
 install package globally
 ```shell
 $ npm install -g
 ```
+
 Download example data
 ```shell
 $ curl https://s3-us-west-2.amazonaws.com/bain-coding-challenge/data.json > data.json
 ```
+
 You're set!
 ```shell
 $ cdminer ./data.json locate 'CA'
@@ -46,60 +57,49 @@ $ cdminer ./data.json locate 'CA'
 ```shell
 cdminer <path> <query> <param>
 ```
-### <path>
+### `<path>`
 Relative path to json file.
 
-### <query>
+### `<query>`
 Can be one of the following:
 #### locate
-Finds the list of companies by Location (state only).
-
-Example:
+  - Finds the list of companies by state location. 
+`<param>` must be a state acronym and is case sensitive.
 ```shell
 $ cdminer ./data.json locate CA
 ```
 
 #### find_before
-Finds the list of companies before a specific year. This is an inclusive
-operation. Must be an integer.
+  - Finds the list of companies before a specific year. This is an inclusive operation. must be an integer.
 
-`<param>` options:
-Must be an integer.
-
-Example:
+`<param>` must be an integer.
 ```shell
 $ cdminer ./data.json find_before 1999
 ```
 
 #### find_after
-Finds the list of companies after a specific year. This is an inclusive
+  - Finds the list of companies after a specific year. This is an inclusive
 operation.
 
-`<param>` options:
-Must be an integer.
-
-Example:
+`<param>` must be an integer.
 ```shell
 $ cdminer ./data.json find_after 2000
 ```
 
 #### find_companies_between_size
-Finds the list of companies based on the number of full time employees.
+  - Finds the list of companies based on the number of full time employees.
 Does not include companies with N/A or NA as value for full_time_employees.
 
-`<param>` options:
-Possible values ['1-10', '11-50', '51-200', '201-500', '501-1,000',
-'1,001-5,000', '5,001-10,000', '10,001+'].
-
-Example:
+`<param>` must be exact match, don't forget the commas! Possible values: `['1-10', '11-50', '51-200', '201-500', '501-1,000','1,001-5,000', '5,001-10,000', '10,001+']`
 ```shell
 $ cdminer ./data.json find_companies_between_size 1,001-5,000
 ```
 
 #### find_type
-Finds all companies by Company Category.
+  - Finds all companies by company category.
 
 `<param>` options:
+must be exact match.
 Possible values [’N/A’,
 'Aerospace and Defense',
 'Business & Legal Services',
@@ -119,18 +119,16 @@ Possible values [’N/A’,
 'Research & Consulting',
 'Scientific Research',
 'Transportation']
-
-Example:
 ```shell
 $ cdminer ./data.json find_type Data/Technology'
 ```
 
 ### `<param>`
-See <query> for param options.
+See `<query>` for param options.
 
 ## Running tests
 
-In your favorite shell, navigate to the root directory, then run `npm test`.
+In your favorite shell, navigate to the root directory and run `npm test`.
 
 ## Next Steps
 1. Support query chaining `cdminer locate CA find_type Media`
@@ -149,7 +147,7 @@ In your favorite shell, navigate to the root directory, then run `npm test`.
 ## Reflections
   - Early in the challenge I opted to write my own `stdin` arguments parser. If I were to repeat this excercise I would use a library for a more robust implementation. This would allow for faster feature development in the future since multiple inputs and flags would be parsed appropriately.
 
-  - I regret that I wasn't able to support Windows operability.
+  - I regret that I wasn't able to support Windows operability. Curious how this would work...
 
 ## Built With
 
@@ -157,10 +155,9 @@ In your favorite shell, navigate to the root directory, then run `npm test`.
 * [GitHub - chalk/chalk: 🖍 Terminal string styling done right](https://github.com/chalk/chalk)
 * [figlet - npm](https://www.npmjs.com/package/figlet)
 
-
 ## Author
 
-* **Henry Chesnutt** - *Initial work*
+* **Henry Chesnutt**
 
 ## License
 
