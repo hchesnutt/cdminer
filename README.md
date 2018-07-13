@@ -20,8 +20,6 @@ cdminer was developed with the following assumptions:
 ## Installing
 
 ### Prerequisites
-
-- cdminer is currently only supported on UNIX based systems.
 - Node.js^10.0.0
 - npm^5.6.0
 
@@ -126,8 +124,6 @@ In your favorite shell, navigate to the root directory and run `npm test`.
 
 ## Reflections
   - Early in the challenge I opted to write my own `stdin` arguments parser. If I were to repeat this excercise I would use a library for a more robust implementation. This would allow for faster feature development in the future since multiple inputs and flags would be parsed appropriately.
-
-  - I regret that I wasn't able to support Windows operability. Curious how that would work...
 
 ## Built With
 
