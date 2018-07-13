@@ -110,7 +110,10 @@ cdminer was developed with the following assumptions:
 ```
 
 ## Design Notes
-> I opted to use npm to package the cdminer shell command because its ease in setup; desirable on such a short turnaround. I went the JavaScript route because it's the language I'm most skilled with. The availability of well supported and easy to deploy tooling makes creating simple, performant, and fast to develop cli tools much easier.
+> I opted to use npm to package the cdminer shell command because its ease in setup; desirable on such a short development timeline. I went the JavaScript route because it's the language I'm most skilled with. The availability of well supported and easy to deploy tooling makes creating simple, performant, and fast to develop cli tools much easier.
+
+## Reflections
+  > Early in the challenge I opted to write my own `stdin` arguments parser. If I were to repeat this excercise I would use a library for a more robust implementation. This would allow for faster feature development in the future since multiple inputs and flags would be parsed appropriately without any additional work.
 
 ## Next Steps
 Some features and next steps I considered but kept in the backlog.
@@ -127,8 +130,6 @@ Some features and next steps I considered but kept in the backlog.
   - Deploy as dockerized service on AWS EC2 instance
   - Expose endpoint and issue keys to users
 
-## Reflections
-  - Early in the challenge I opted to write my own `stdin` arguments parser. If I were to repeat this excercise I would use a library for a more robust implementation. This would allow for faster feature development in the future since multiple inputs and flags would be parsed appropriately.
 
 ## Built With
 
