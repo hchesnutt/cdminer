@@ -22,5 +22,29 @@
     "data_impacts": "[]",
     "financial_info": "3 Round Stones is a profitable, self-funded, woman-owned start-up.  Our team has several successful serial entrepreneurs.  As entrepreneurs, we've benefited from the valuable guidance by seasoned advisers and mentors in the mid-Atlantic region who have guided our team through multiple start-ups, outside funding and an acquisition by a Fortune 100 company in 2005.",
     "last_updated": "2014-11-12 14:44:25.969871"
+  },
+  {
+    "company_name_id": "48-factoring-inc",
+    "company_name": "48 Factoring Inc.",
+    "url": "https://www.48factoring.com",
+    "year_founded": 2014,
+    "city": "Philadelphia",
+    "state": "PA",
+    "country": "us",
+    "zip_code": 19087,
+    "full_time_employees": "51-200",
+    "company_type": "Private",
+    "company_category": "Finance & Investment",
+    "revenue_source": "Financial Services",
+    "business_model": "Business to Business",
+    "social_impact": "Small Business Owners",
+    "description": "The company mission is to provide finance to small business. We also provide financing to small business with bad credit too on the basis of future credit.",
+    "description_short": "48 Factoring Inc. is one of the best financial services company using unique factoring 2.0 financial product which helps business to grow.",
+    "source_count": "11-50",
+    "data_types": "Business",
+    "example_uses": "",
+    "data_impacts": "[u'Cost efficiency', u'Job growth', u'Revenue growth']",
+    "financial_info": "",
+    "last_updated": "2015-05-18 11:36:39.902880"
   }
 ]
