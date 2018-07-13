@@ -2,21 +2,6 @@
 
 Company Data Miner is a quick and light command-line data explorer for company data JSON files that can be loaded into memory.
 
-## Assumptions
-cdminer was developed with the following assumptions:
-- JSON file can fit in memory
-- JSON file is an array of company objects
-- Each object looks like the company schema example below
-```json
-{
-  "company_name": "3 Round Stones, Inc.",
-  "year_founded": 2010,
-  "state": "DC",
-  "full_time_employees": "1-10",
-  "company_category": "Data/Technology"
-}
-```
-
 ## Installing
 
 ### Prerequisites
@@ -110,7 +95,27 @@ See `<query>` for param options.
 
 In your favorite shell, navigate to the root directory and run `npm test`.
 
+
+## Assumptions
+cdminer was developed with the following assumptions:
+- JSON file can fit in memory
+- JSON file is an array of company objects
+- Each object looks like the company schema example below
+```json
+{
+  "company_name": "3 Round Stones, Inc.",
+  "year_founded": 2010,
+  "state": "DC",
+  "full_time_employees": "1-10",
+  "company_category": "Data/Technology"
+}
+```
+
+## Design Notes
+> I opted to use npm to package the cdminer shell command because its ease in setup; desirable on such a short turnaround. I went the JavaScript route because it's the language I'm most skilled with. The availability of well supported and easy to deploy tooling makes creating simple, performant, and fast to develop cli tools much easier.
+
 ## Next Steps
+Some features and next steps I considered but kept in the backlog.
 1. Support query chaining `cdminer locate CA find_type Media`
 2. Refactor cdminer signature to support --data or --url flags as data source
   -`cdminer <query> <param> [-d --data <path>] [-u --url <remotepath>]
