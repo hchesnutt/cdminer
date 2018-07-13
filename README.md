@@ -148,4 +148,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * GitHub user andrei-m for his Levenshtein distance algorithm implementation
-* Mother
+* Mom <3
