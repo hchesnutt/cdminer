@@ -9,7 +9,10 @@ const queryRouter = {
     });
   },
   find_after: (companies, year) => {
-    return companies.filter(company => company.year_founded >= year);
+    return companies.filter(company => {
+      if (typeof company.year_founded === 'string') return false;
+      return company.year_founded >= year
+    });
   },
   find_companies_between_size: (companies, range) => {
     return companies.filter(company => company.full_time_employees === range);
