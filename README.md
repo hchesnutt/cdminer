@@ -56,7 +56,7 @@ Finds the list of companies by Location (state only).
 
 Example:
 ```shell
-$ cdminer locate CA
+$ cdminer ./data.json locate CA
 ```
 
 #### find_before
@@ -68,7 +68,7 @@ Must be an integer.
 
 Example:
 ```shell
-$ cdminer find_before 1999
+$ cdminer ./data.json find_before 1999
 ```
 
 #### find_after
@@ -80,7 +80,7 @@ Must be an integer.
 
 Example:
 ```shell
-$ cdminer find_after 2000
+$ cdminer ./data.json find_after 2000
 ```
 
 #### find_companies_between_size
@@ -93,10 +93,10 @@ Possible values ['1-10', '11-50', '51-200', '201-500', '501-1,000',
 
 Example:
 ```shell
-$ cdminer find_companies_between_size 1,001-5,000
+$ cdminer ./data.json find_companies_between_size 1,001-5,000
 ```
 
-find_type
+#### find_type
 Finds all companies by Company Category.
 
 `<param>` options:
@@ -122,29 +122,34 @@ Possible values [’N/A’,
 
 Example:
 ```shell
-$ cdminer find_type Data/Technology'
+$ cdminer ./data.json find_type Data/Technology'
 ```
 
 ### `<param>`
 See <query> for param options.
 
-## Running the tests
+## Running tests
 
-Run `npm test` in your favorite shell from the project root directory.
+In your favorite shell, navigate to the root directory, then run `npm test`.
 
 ## Next Steps
 1. Support query chaining `cdminer locate CA find_type Media`
 2. Refactor cdminer signature to support --data or --url flags as data source
   -`cdminer <query> <param> [-d --data <path>] [-u --url <remotepath>]
-1. Support large datasets and increase performance when making multiple queries
+3. Support large datasets and increase performance when making multiple queries
   - Implement local Elasticsearch instance
   - Refactor executable to start background daemon process
   - Refactor manual query handlers to Elasticsearch logic
   - Add checksum of file as Elasticsearch index, if file has aleady been added, don't need to add again.
   - Batch import json file into Elasticsearch
-2. Support concurrent users across organization
+4. Support concurrent users across organization
   - Deploy as dockerized service on AWS EC2 instance
   - Expose endpoint and issue keys to users
+
+## Reflections
+  - Early in the challenge I opted to write my own `stdin` arguments parser. If I were to repeat this excercise I would use a library for a more robust implementation. This would allow for faster feature development in the future since multiple inputs and flags would be parsed appropriately.
+
+  - I regret that I wasn't able to support Windows operability.
 
 ## Built With
 
@@ -163,13 +168,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* GitHub user andrei-m for his Levenshtein distance algorithm
+* GitHub user andrei-m for his Levenshtein distance algorithm implementation
 * Mother
-
-
-### Testing
-how to run tests
-
-npm install -g
-
-cdminer <path> <query> <>
