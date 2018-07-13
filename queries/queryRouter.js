@@ -3,7 +3,10 @@ const queryRouter = {
     return companies.filter(company => company.state === state);
   },
   find_before: (companies, year) => {
-    return companies.filter(company => company.year_founded <= year);
+    return companies.filter(company => {
+      if (typeof company.year_founded === 'string') return false;
+      return company.year_founded <= year;
+    });
   },
   find_after: (companies, year) => {
     return companies.filter(company => company.year_founded >= year);

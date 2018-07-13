@@ -2,15 +2,26 @@
 
 const chalk = require('chalk');
 
-const { parseArgs, loadData } = require('./lib');
+const { parseArgs, loadData, exitProcess } = require('./lib');
 const { filterCompanies } = require('./queries');
 
-// Collect and parse stdin
-const args = parseArgs(process.argv);
+let args, companies;
+
+try {
+  // Collect and parse stdin
+  args = parseArgs(process.argv);
+} catch(e) {
+  // If invalid print error and end process;
+  exitProcess(e);
+}
 const { filePath, query, param } = args;
 
-// Load data from file
-const companies = loadData(filePath);
+try {
+  // Load data from file
+  companies = loadData(filePath);
+} catch(e) {
+
+}
 
 // Execute query filtering operation
 const companyNames = filterCompanies(companies, query, param);
@@ -23,3 +34,5 @@ ${chalk.yellow('Number of Companies:')} ${companyNames.length}
 `);
 
 process.exit();
+
+
