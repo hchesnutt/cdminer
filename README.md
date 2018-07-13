@@ -2,11 +2,27 @@
 
 Company Data Miner is a quick and light command-line data explorer for company data JSON files that can be loaded into memory.
 
+<<<<<<< HEAD
+=======
+## Assumptions
+cdminer was developed with the following assumptions:
+- JSON file can fit in memory
+- JSON file is an array of company objects
+- Each object looks like the company schema example below, but may contain more properties.
+```json
+{
+  "company_name": "3 Round Stones, Inc.",
+  "year_founded": 2010,
+  "state": "DC",
+  "full_time_employees": "1-10",
+  "company_category": "Data/Technology"
+}
+```
+
+>>>>>>> 0e0699fe1dc01bc5f0daac1baabeae3999bf48e9
 ## Installing
 
 ### Prerequisites
-
-- cdminer is currently only supported on UNIX based systems.
 - Node.js^10.0.0
 - npm^5.6.0
 
@@ -46,7 +62,7 @@ cdminer <path> <query> <param>
 Relative path to json file.
 
 ### `<query>`
-Can be one of the following:
+cdminer will suggest most similar query in case of misspell based on Levenshtein distance. Query can be one of the following:
 #### **locate**
   - Finds the list of companies by state location. 
 `<param>` must be a state acronym and is case sensitive.
@@ -131,8 +147,6 @@ Some features and next steps I considered but kept in the backlog.
 
 ## Reflections
   - Early in the challenge I opted to write my own `stdin` arguments parser. If I were to repeat this excercise I would use a library for a more robust implementation. This would allow for faster feature development in the future since multiple inputs and flags would be parsed appropriately.
-
-  - I regret that I wasn't able to support Windows operability. Curious how that would work...
 
 ## Built With
 
