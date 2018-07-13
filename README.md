@@ -29,27 +29,27 @@ cdminer was developed with the following assumptions:
 
 A step by step series of examples that tell you how to get this tool up and running on your local machine.
 
-Clone or download repository onto your local computer
+1. Clone or download repository onto your local computer
 ```shell
 git clone https://github.com/hchesnutt/cdminer
 ```
 
-Navigate to root
+2. Navigate to root
 ```shell
 $ cd ./cdminer
 ```
 
-install package globally
+3. install package globally
 ```shell
 $ npm install -g
 ```
 
-Download example data
+4. Download example data
 ```shell
 $ curl https://s3-us-west-2.amazonaws.com/bain-coding-challenge/data.json > data.json
 ```
 
-You're set!
+5. You're set!
 ```shell
 $ cdminer ./data.json locate 'CA'
 ```
@@ -62,14 +62,14 @@ Relative path to json file.
 
 ### `<query>`
 Can be one of the following:
-#### locate
+#### **locate**
   - Finds the list of companies by state location. 
 `<param>` must be a state acronym and is case sensitive.
 ```shell
 $ cdminer ./data.json locate CA
 ```
 
-#### find_before
+#### **find_before**
   - Finds the list of companies before a specific year. This is an inclusive operation. must be an integer.
 
 `<param>` must be an integer.
@@ -77,7 +77,7 @@ $ cdminer ./data.json locate CA
 $ cdminer ./data.json find_before 1999
 ```
 
-#### find_after
+#### **find_after**
   - Finds the list of companies after a specific year. This is an inclusive
 operation.
 
@@ -86,7 +86,7 @@ operation.
 $ cdminer ./data.json find_after 2000
 ```
 
-#### find_companies_between_size
+#### **find_companies_between_size**
   - Finds the list of companies based on the number of full time employees.
 Does not include companies with N/A or NA as value for full_time_employees.
 
@@ -95,7 +95,7 @@ Does not include companies with N/A or NA as value for full_time_employees.
 $ cdminer ./data.json find_companies_between_size 1,001-5,000
 ```
 
-#### find_type
+#### **find_type**
   - Finds all companies by company category.
 
 `<param>` options:
