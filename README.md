@@ -98,7 +98,7 @@ In your favorite shell, navigate to the root directory and run `npm test`.
 cdminer was developed with the following assumptions:
 - JSON file can fit in memory
 - JSON file is an array of company objects
-- Each object looks like the company schema example below
+- Each object looks like the company schema example below. May have additional properties.
 ```json
 {
   "company_name": "3 Round Stones, Inc.",
