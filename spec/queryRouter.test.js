@@ -9,7 +9,7 @@ const { locate,
 
 const companies = require('./testData/valid.json');
 
-describe('Query functions', function() {
+describe('queryRouter', function() {
 
   describe('locate', function() {
     it('Should return an array of filtered states', function() {
