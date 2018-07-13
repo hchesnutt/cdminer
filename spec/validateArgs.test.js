@@ -3,32 +3,27 @@ const { expect } = require('chai');
 const { validateArgs } = require('../lib');
 
 describe('validateArgs', function () {
-  let wasCalled = false;
-  const validArgs = { filePath: './data.json',
-                      query: 'find_type',
-                      param: 'Media'};
-  
-  it('Error handler should only be called if path does not exist', function () {
+  it('Should not throw exception for valid arguments', function() {
+    const validArgs = { filePath: './data.json',
+                        query: 'find_type',
+                        param: 'Media'};
+                        
+    expect(validateArgs.bind(null, validArgs)).to.not.throw();
+    expect(validateArgs(validArgs)).to.be.true;
+  });
+  it('Should throw exception if path does not exist', function () {
     const invalidArgs = { filePath: './otherFile.json',
                           query: 'find_type',
                           param: 'Media'};
     
-    validateArgs(validArgs, () => wasCalled = true);
-    expect(wasCalled).to.be.false;
-    wasCalled = false;
-    validateArgs(invalidArgs, () => wasCalled = true);
-    expect(wasCalled).to.be.true;
+    expect(validateArgs.bind(null, invalidArgs)).to.throw();
   });
   
-  it('Error handler should only be called if query is not valid', function () {
+  it('Should throw exception if query is not valid', function () {
     const invalidArgs = { filePath: './data.json',
                           query: 'find',
                           param: 'Media'};
-    wasCalled = false;
-    validateArgs(validArgs, () => wasCalled = true);
-    expect(wasCalled).to.be.false;
-    wasCalled = false;
-    validateArgs(invalidArgs, () => wasCalled = true);
-    expect(wasCalled).to.be.true;
+
+    expect(validateArgs.bind(null, invalidArgs)).to.throw();
   });
 });

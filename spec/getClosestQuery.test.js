@@ -9,6 +9,6 @@ describe('getClosestQuery', function() {
 
     for (let i in inputs) {
       expect(getClosestQuery(inputs[i])).to.equal(queries[i]);
-    }
+    };
   });
-})
+});
